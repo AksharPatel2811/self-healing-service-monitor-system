@@ -18,4 +18,15 @@ public class HealthController {
         healthy = false;
         return "Service crashed";
     }
+
+    // ===== Helper methods for self-healing =====
+
+    public boolean isHealthy() {
+        return healthy;
+    }
+
+    public void recover() {
+        healthy = true;
+        System.out.println("Service recovered automatically");
+    }
 }
